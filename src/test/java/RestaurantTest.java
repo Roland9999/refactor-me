@@ -1,19 +1,22 @@
 import org.junit.Test;
+import peo.java.test.restaurant.Restaurant;
 
-import static org.junit.Assert.assertTrue;
+import java.time.DayOfWeek;
 
 /**
  * @author Hugh Glykod
  */
 public class RestaurantTest {
 
+    private Restaurant myRestaurant = new Restaurant("Flunch");
+
     @Test
     public void testDefaultOpeningHours() {
 
-        Restaurant myRestaurant = new Restaurant();
+        boolean isOpen = myRestaurant.isOpen(DayOfWeek.MONDAY);
 
-        boolean isOpen = myRestaurant.isOpen(Restaurant.MONDAY);
-
-        assertTrue(isOpen);
+        System.out.println("Est ce que le restaurant "+myRestaurant.getName()+" est ouvert en ce moment ? : "+ isOpen);
     }
+
+
 }
