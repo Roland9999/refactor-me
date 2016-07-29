@@ -1,7 +1,9 @@
 import org.junit.Test;
-import peo.java.test.restaurant.Restaurant;
 
 import java.time.DayOfWeek;
+
+import static junit.framework.TestCase.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 /**
  * @author Hugh Glykod
@@ -13,7 +15,10 @@ public class RestaurantTest {
     @Test
     public void testDefaultOpeningHours() {
 
-        boolean isOpen = myRestaurant.isOpen(DayOfWeek.MONDAY);
+        boolean isOpen = myRestaurant.isOpen(DayOfWeek.SATURDAY, "2016-08-02T17:59:00Z");
+
+        if(isOpen) assertTrue(isOpen);
+        else assertFalse(isOpen);
 
         System.out.println("Est ce que le restaurant "+myRestaurant.getName()+" est ouvert en ce moment ? : "+ isOpen);
     }
